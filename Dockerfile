@@ -3,10 +3,9 @@ FROM python:3.9.2-alpine
 # get curl for healthchecks
 RUN apk add curl
 
-WORKDIR /code
-COPY requirements.txt /code
-RUN --mount=type=cache,target=/root/.cache/pip \
-    pip3 install -r requirements.txt
+WORKDIR /app
+COPY requirements.txt requirements.txt
+RUN pip3 install -r requirements.txt
 
 COPY . .
 
