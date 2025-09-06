@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route("/")
 def index():
     background_color = environ.get("BACKGROUND_COLOR", "lightblue")
-    welcome_text = environ.get("WELCOME_TEXT", "Welcome to the Flask Demo!")
+    welcome_text = environ.get("WELCOME_TEXT", "Welcome to the K8S Config Demo!")
 
     # 從 Secret 中取得敏感資訊（模擬 API Token）
     api_token = environ.get("API_TOKEN", "No token")
